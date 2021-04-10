@@ -72,6 +72,10 @@ final class PostProcessorRegistrationDelegate {
 					registryProcessors.add(registryProcessor);
 				}
 				else {
+					/**
+					 * 若没有实现BeanDefinitionRegisterPostProcessor接口，那么他就是BeanFactoryPostProcessor
+					 *
+					 */
 					regularPostProcessors.add(postProcessor);
 				}
 			}

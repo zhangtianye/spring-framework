@@ -138,10 +138,10 @@ public class ClassPathXmlApplicationContext extends AbstractXmlApplicationContex
 			String[] configLocations, boolean refresh, @Nullable ApplicationContext parent)
 			throws BeansException {
 
-		super(parent);
-		setConfigLocations(configLocations);
+		super(parent); //初始化父类，获得xml路径资源解析器
+		setConfigLocations(configLocations); // 通过环境变量解析xml路径(xml真实路径)
 		if (refresh) {
-			refresh();
+			refresh(); // spring最重要的方法，甚至体现了整个ioc的生命周期
 		}
 	}
 
